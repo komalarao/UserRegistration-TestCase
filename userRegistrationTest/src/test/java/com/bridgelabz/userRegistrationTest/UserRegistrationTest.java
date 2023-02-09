@@ -20,9 +20,16 @@ public class UserRegistrationTest {
 		UserRegistration validation = new UserRegistration();
 		Assert.assertEquals(true, validation.checkFirstName("Srinu"));
 	}
-    @Test
+
+	@Test
 	public void checkLastName() {
 		UserRegistration validation = new UserRegistration();
 		Assert.assertEquals(true, validation.checkLastName("Vakamullu"));
+	}
+
+	@Test
+	public void checkEmail() {
+		UserRegistration validation = new UserRegistration();
+		Assert.assertEquals(true, validation.checkLastName("manoharvakamullu1999@gmail.com"));
 	}
 }
