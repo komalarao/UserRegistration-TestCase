@@ -68,4 +68,5 @@ public class UserRegistrationTest {
 		UserRegistration validation = new UserRegistration();
 		Assert.assertEquals(true, validation.checkAllEmail("srinuvakamullu125@yahoo.com"));
 	}
+	
 }
