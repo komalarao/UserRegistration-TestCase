@@ -2,7 +2,7 @@ package com.bridgelabz.userRegistrationTest;
 
 import java.util.regex.*;
 
-public class UserRegistration {
+public class UserValidation {
 
 	public static final String VALIDATE_NAME = "^[A-Z]+[a-z]{2,}$";
 	public static final String EMAIL_ID = "^[a-z]{3,}[.][a-z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.][a-z]{2,}$";

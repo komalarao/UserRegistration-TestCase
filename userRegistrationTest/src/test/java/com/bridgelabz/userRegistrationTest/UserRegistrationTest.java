@@ -5,68 +5,69 @@ import junit.framework.Assert;
 
 public class UserRegistrationTest {
 	@Before
-	public void welcomeMsg() {
-		System.out.println("Welcome to User Registration Problem");
-	}
+    static void beforeAllTestMsg() {
+        System.out.println("-----Welcome to User Registration Problem-----");
+    }
+    @AfterClass
+    static void afterAllTestPassedMsg(){
+        System.out.println("All Test Case Passed");
+    }
 
-	@After
-	public void afterTest() {
+    @After
+    public void afterEachTestPassMsg() {
+        System.out.println("Happy Test Case");
+    }
 
-		System.out.println("after every test case");
-	}
+    @Test
+    void given_first_name_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.checkFirstName("Komalarao"));
 
-	@Test
-	public void checkFirstName() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkFirstName("Srinu"));
-	}
+    }
 
-	@Test
-	public void checkLastName() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkLastName("Vakamullu"));
-	}
+    @Test
+    void given_last_name_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.checkLastName("Srinu"));
 
-	@Test
-	public void checkEmail() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkEmail("abc.xyz@bl.co.in"));
-	}
+    }
 
-	@Test
-	public void checkMobileNumber() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkMobileNumber("91 6789054321"));
-	}
+    @Test
+    void given_email_id_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.checkemailId("Srinu.ab@gmail.com"));
+    }
 
-	@Test
-	public void checkPassword() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkPassword("Srinu123"));
-	}
+    @Test
+    void given_phoneNumber_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+       Assert.assertEquals(true, validation.phoneNumber("91 9812040783"));
+    }
+    @Test
+    void given_password_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.password("ksndfkdn"));
+    }
+    @Test
+    void given_password1_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.password2("Ksndfkdn"));
+    }
+    @Test
+    void given_password2_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Boolean result6 = validation.password3("Ksndkdv67");
+        Assert.assertEquals(true, validation.password3("Ksndkdv67"));
+    }  @Test
+    void given_password3_should_returnTrue() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.password4("Ksndkdv67@"));
 
-	@Test
-	public void checkPasswordSecondRule() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkPasswordSecondRule("Srinu123"));
-	}
+    }
+    @Test
+    void given_emailId_should_return_True() throws UserValidationException {
+        UserValidation validation = new UserValidation();
+        Assert.assertEquals(true, validation.checkEmailSeperate("abc@yahoo.com"));
 
-	@Test
-	public void checkPasswordThirdRule() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkPasswordThirdRule("Srinu123"));
-	}
-
-	@Test
-	public void checkPasswordFourthRule() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkPasswordFourthRule("Srinu@123"));
-	}
-
-	@Test
-	public void checkAllEmail() {
-		UserRegistration validation = new UserRegistration();
-		Assert.assertEquals(true, validation.checkAllEmail("srinuvakamullu125@yahoo.com"));
-	}
-	
+    }
 }
