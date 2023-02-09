@@ -38,4 +38,10 @@ public class UserRegistrationTest {
 		UserRegistration validation = new UserRegistration();
 		Assert.assertEquals(true, validation.checkMobileNumber("91 6789054321"));
 	}
+
+	@Test
+	public void checkPassword() {
+		UserRegistration validation = new UserRegistration();
+		Assert.assertEquals(true, validation.checkPassword("Srinu123"));
+	}
 }
