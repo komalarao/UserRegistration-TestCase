@@ -12,12 +12,17 @@ public class UserRegistrationTest {
 	@After
 	public void afterTest() {
 
-		System.out.println("after the test case");
+		System.out.println("after every test case");
 	}
 
 	@Test
 	public void checkFirstName() {
 		UserRegistration validation = new UserRegistration();
 		Assert.assertEquals(true, validation.checkFirstName("Srinu"));
+	}
+    @Test
+	public void checkLastName() {
+		UserRegistration validation = new UserRegistration();
+		Assert.assertEquals(true, validation.checkLastName("Vakamullu"));
 	}
 }
